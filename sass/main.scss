@@ -441,7 +441,7 @@ a:focus {
 		margin-top: 30px;
 		resize: vertical;
 	}
-	input[type="submit"] {
+	[type="submit"] {
 		@extend .btn;
 		margin-top: 60px;
 		background-color: $contact-btn-bg-color;

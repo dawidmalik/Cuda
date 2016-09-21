@@ -1191,7 +1191,7 @@ a:focus {
   color: #ffffff;
 }
 
-.btn, .contact input[type="submit"] {
+.btn, .contact [type="submit"] {
   display: inline-block;
   padding: 20px 60px;
   padding-bottom: 25px;
@@ -1205,12 +1205,12 @@ a:focus {
   color: #ffffff;
 }
 
-.btn[type="button"]:focus, .contact input[type="button"][type="submit"]:focus, .btn[type="submit"]:focus, .contact input[type="submit"]:focus {
+.btn[type="button"]:focus, .contact [type="button"][type="submit"]:focus, .btn[type="submit"]:focus, .contact [type="submit"]:focus {
   outline: thin dotted;
   outline-offset: -10px;
 }
 
-.btn:hover, .contact input[type="submit"]:hover {
+.btn:hover, .contact [type="submit"]:hover {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -1662,12 +1662,12 @@ li .portfolio__filter--active,
   resize: vertical;
 }
 
-.contact input[type="submit"] {
+.contact [type="submit"] {
   margin-top: 60px;
   background-color: #30bae7;
 }
 
-.contact input[type="submit"]:hover {
+.contact [type="submit"]:hover {
   background-color: #1ab2e3;
 }
 
