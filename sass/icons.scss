@@ -1,0 +1,22 @@
+.icon {
+	&::before {
+		content: '';
+		display: inline-block;
+		overflow: hidden;
+		width: 16px;
+		height: 16px;
+		background-image: url('../img/icons.png');
+		background-repeat: no-repeat;
+	}
+
+	&--facebook::before  { 
+		background-position: 0 0; }
+	&--twitter::before  { 
+		background-position: -16px*1 0; }
+	&--linkedin::before { 
+		background-position: -16px*2 0; }
+	&--mail::before  { 
+		background-position: -16px*3 0; }
+	&--menu::before  { 
+		background-position: -16px*4 0; }
+}

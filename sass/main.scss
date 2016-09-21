@@ -1,0 +1,479 @@
+@import 'bootstrap-grid.scss';
+@import 'variables.scss';
+@import 'icons.scss';
+
+body {
+	font-family: $default-font-family;
+	font-size: $default-font-size;
+	color: $default-font-color;	
+}
+
+a {
+	transition: all 0.25s;
+}
+a,
+a:hover,
+a:focus {
+	text-decoration: none;
+	color: $default-font-color;
+}
+
+.btn {
+	display: inline-block;
+	padding: 20px 60px;
+	padding-bottom: 25px;
+	border-radius: 3px;
+	border: none;
+	box-shadow: inset 0 -5px 0 rgba(0,0,0,0.15);
+	background-color: $default-btn-bg-color;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 18px;
+	color: $default-font-color;
+	&[type="button"]:focus,
+	&[type="submit"]:focus {
+		outline: thin dotted;
+		outline-offset: -10px;
+	}
+	&:hover {
+		background-color: $default-btn-bg-color;
+	}
+}
+
+.nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		@extend .clearfix;
+	}
+	li {
+		float: left;
+	}
+}
+
+.navbar {
+	@extend .clearfix;
+	&__header {
+		@extend .clearfix;
+		float: left;
+	}
+	&__logo {
+		float: left;
+		margin: 0;
+		a, 
+		img {
+			display: block;
+		}
+	}
+	&__toggle {
+		display: none;
+		float: right;
+		padding: 10px;
+		border: none;
+		border-radius: 2px;
+		background-color: $navbar-toogle-btn-bg-color;
+		font-size: 0;
+		@extend .icon;
+		@extend .icon--menu;
+		&--active,
+		&:hover {
+			background-color: $navbar-toogle-btn-bg-color-hover;
+		}
+		&:focus {
+			outline: thin dotted;
+			outline-offset: -5px;
+		}
+	}
+	&__nav {
+		float: right;
+	}
+	&__nav {
+		a {
+			display: block;
+			margin: 0 5px;
+			padding: 5px 15px;
+			border-radius: 3px;
+			font-size: 16px;
+			text-transform: uppercase;
+			&:hover {
+				background-color: $navbar-nav-btn-bg-color;
+			}	
+		}
+		&--active {
+			background-color: $navbar-nav-btn-bg-color;
+		}
+	}
+	@media (max-width: $small-devices) {
+		&__header {
+			float: none;
+		}
+		&__nav {
+			display: none;
+			float: none;
+			margin-top: 30px;
+			& li {
+				float: none;
+				margin: 5px 0;
+				text-align: center;
+			}
+		}
+		&__toggle {
+			display: block;
+		}
+	}
+}
+
+.main-header {
+	padding-top: 60px;
+	background-color: $header-bg-color;
+}
+
+.intro {
+	background-color: $header-bg-color;
+	text-align: center;
+	&__title {
+		margin-bottom: 60px;
+		line-height: 1.2;
+		font-weight: 700;
+		font-size: 42px;
+	}
+	&__btn {
+		background-color: $intro-btn-bg-color;
+		&:hover {
+			background-color: darken($intro-btn-bg-color, 5%);
+		}
+	}
+}
+
+.section {
+	padding: 120px 0;
+	&__header {
+		text-align: center;
+	}
+	&__title {
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		font-size: 40px;
+	}
+	&__desc {
+		margin: 0;
+		font-size: 18px;
+	}
+	&__header > &__title + &__desc::before {
+			content: '';
+			display: block;
+			width: 90px;
+			height: 4px;
+			margin: 15px auto;
+			background-color: $section-header-sep-color;
+	}
+	&__header:not(:only-child) {
+		margin-bottom: 80px;
+	}
+
+}
+
+.services {
+	padding-bottom: 60px;
+	background-color: $services-bg-color;
+	&__item {
+		margin-bottom: 60px;
+		text-align: center;
+	}
+	&__icon {
+		margin-bottom: 60px;
+	}
+	&__title {
+		margin-top: 0;
+		margin-bottom: 15px;
+		font-size: 24px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&__desc {
+		font-size: 16px;
+		font-weight: 300;
+	}
+}
+
+.team {
+	padding-bottom: 60px;
+	background-color: $team-bg-color;
+	text-align: center;
+	color: $team-font-color;
+	&__item {
+		margin-bottom: 60px;
+	}
+	&__avatar {
+		width: 100%;
+		height: 100%;
+		max-width: 200px;
+		max-height: 200px;
+		border-radius: 100%;
+	}
+	&__name {
+		margin-top: 30px;
+		margin-bottom: 0;
+		font-size: 24px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&__title {
+		margin-top: 4px;
+		margin-bottom: 0;
+		font-size: 16px;
+		font-weight: 500;
+		color: $team-title-font-color;
+	}
+	&__desc {
+		margin-top: 20px;
+		margin-bottom: 0;
+		font-size: 16px;
+	}
+
+	&__social-links {
+		@extend .nav;
+		display: inline-block;
+		margin-top: 30px;
+		li {
+			display: inline-block;
+			float: none;
+		}
+		a.icon {
+			display: block;
+			width: 32px;
+			height: 32px;
+			border-radius: 100%;
+			background-color: $team-icon-bg-color;
+			line-height: 34px;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			&:hover {
+				background-color: darken($team-icon-bg-color, 10%);
+			}
+		}
+	}	
+}
+
+.skills {
+	padding-bottom: 60px;
+	background-color: $default-font-color;
+	text-align: center;
+	color: $skills-font-color;
+	&__item {
+		margin-bottom: 60px;
+	}
+	.percent-circle > svg {
+		width: 160px;
+		height: 160px;
+	}
+	&__name {
+		display: block;
+		margin-top: 20px;
+		font-size: 24px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+.percent-circle {
+	&__base, &__progress {
+		cx: 50%;
+		cy: 50%;
+		r: 45.5%; /* <= 50% - (9% / 2) */
+		stroke-width: 9%;
+		fill: none;
+	}
+	&__base {
+		stroke: $percent-circle-base-stroke;
+	}
+	&__progress {
+		transform: rotate(-90deg);
+		transform-origin: center center;
+	}
+	&__text {
+		fill: currentColor;
+		text-anchor: middle;
+		font-weight: 300;
+		font-size: 0;
+	}
+	&__percent {
+		alignment-baseline: central;
+		font-size: 50px;
+	}
+	&__unit {
+		alignment-baseline: mathematical;
+		font-size: 32px;
+	}
+}
+
+.portfolio {
+	background-color: $portfolio-bg-color;
+	text-align: center;
+	color: $portfolio-font-color;
+	&__filter {
+		@extend .nav;
+		display: inline-block;
+		margin-top: 50px;
+		li {
+			display: inline-block;
+			float: none;
+		}
+		button {
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 20px;
+			padding: 5px 28px;
+			border: none;
+			border-radius: 4px;
+			background-color: $portfolio-filter-btn-color;
+			text-transform: uppercase;
+			font-size: 18px;
+			color: $portfolio-font-color;
+		}
+		li &--active,
+		button:hover {
+			background-color: $portfolio-filter-btn-active-color;
+		}
+		button:focus {
+				outline: thin dotted;
+				outline-offset: -5px;
+		}
+	}
+	&__item {
+		margin-bottom: 60px;
+	}
+	&__preview {
+		display: inline-block;
+		max-width: 541px;
+		width: 100%;
+		opacity: 0.9;
+		img {
+			width: 100%;
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+	&__title {
+		display: block;
+		margin-top: 30px;
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+	&__btn {
+		margin-top: 30px;
+		background-color: $portfolio-btn-bg-color;
+		&:hover {
+			background-color: darken($portfolio-btn-bg-color, 5%);
+		}
+	}
+}
+
+.testimonials {
+	padding-bottom: 0;
+	background-color: $testimonials-bg-color;
+	&__item {
+		@extend .clearfix;
+		margin-bottom: 120px;
+	}
+	&__avatar {
+		width: 100%;
+		max-width: 100px;
+		max-height: 100px;
+		border-radius: 100px;
+	}
+	&__quote {
+		font-size: 21px;
+		font-style: italic;
+	}
+	&__name {
+		display: block;
+		margin-top: 20px;
+		font-size: 24px;
+		font-weight: bold;
+		font-style: normal;
+		text-transform: uppercase;
+	}
+	&__job-title {
+		display: block;
+		font-size: 18px;
+		color: $testimonials-title-font-color;
+	}
+}
+
+.contact {
+	background-color: $contact-bg-color;
+	text-align: center;
+	abbr[title=""] {
+		border: none;
+	}
+	fieldset {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	textarea,
+	input[type="text"],
+	input[type="email"] {
+		width: 100%;
+		border: none;
+		border-radius: 3px;
+		padding: 15px 25px;
+		background-color: $contact-input-bg-color;
+		font-size: 18px;
+		color: $default-font-color;
+	}
+	input[type="text"],
+	input[type="email"] {
+		margin-top: 30px;
+	}
+	textarea {
+		height: 200px;
+		margin-top: 30px;
+		resize: vertical;
+	}
+	input[type="submit"] {
+		@extend .btn;
+		margin-top: 60px;
+		background-color: $contact-btn-bg-color;
+		&:hover {
+			background-color: darken($contact-btn-bg-color, 5%);
+		}
+	}
+}
+
+.footer {
+	padding: 20px 0;
+	background-color: $footer-bg-color;
+	text-align: center;
+	&__social-links {
+		@extend .nav;
+		display: inline-block;
+		li {
+			display: inline-block;
+			float: none;
+		}
+		a {
+			display: block;
+			margin: 25px;
+			font-size: 24px;
+			font-weight: 600;
+			&:hover {
+				color: $footer-social-links-color;
+			}
+		}
+	}
+}
+
+.col-center {
+	float: none;
+	margin: 0 auto;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "cuda",
+  "version": "1.0.0",
+  "description": "Single page portfolio",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawidmalik/Cuda.git"
+  },
+  "author": "Dawid Malik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dawidmalik/Cuda/issues"
+  },
+  "homepage": "https://github.com/dawidmalik/Cuda#readme",
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
