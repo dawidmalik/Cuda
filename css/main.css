@@ -1179,7 +1179,8 @@ body {
   color: #ffffff;
 }
 
-a {
+a,
+button {
   transition: all 0.25s;
 }
 
